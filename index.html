@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ARISA - Official Website </title>
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+</head>
+<body>
+    <div id="desktop">
+        <div id="taskbar">
+            <button id="startbutton">Start</button>
+            <div id="systemtray">System Tray</div>
+
+        </div>
+        <div id="icons">
+            <img class="icon" src="internet-explorer.png" alt="Internet Explorer" onclick="openApplication('browser')">
+            <img class="icon" src="file-explorer.png" alt="File Explorer" onclick="openApplication('explorer')">
+            <img class="icon" src="notepad.png" alt="Notepad" onclick="openApplication('notepad')">
+            <img class="icon" src="media-player.png" alt="Media Player" onclick="openApplication('player')">
+            </div>
+        </div>
+        
+  <div id="browser" class="window hidden">
+      <div class="title-bar">
+          <span>Internet Explorer</span>
+          <button onclick="closeApplication('browser')">X</button>
+      </div>
+      <div class="window-body">
+          <p>This could be your embedded music player or website content.</p>
+      </div>
+  </div>
+
+  <div id="explorer" class="window hidden">
+      <div class="title-bar">
+          <span>File Explorer</span>
+          <button onclick="closeApplication('explorer')">X</button>
+      </div>
+      <div class="window-body">
+          <p>Some files or images could go here.</p>
+      </div>
+  </div>
+
+  <div id="notepad" class="window hidden">
+      <div class="title-bar">
+          <span>Notepad</span>
+          <button onclick="closeApplication('notepad')">X</button>
+      </div>
+      <div class="window-body">
+          <p>Lyrics, bios, or messages could live here.</p>
+      </div>
+  </div>
+
+  <div id="player" class="window hidden">
+      <div class="title-bar">
+          <span>Media Player</span>
+          <button onclick="closeApplication('player')">X</button>
+      </div>
+      <div class="window-body">
+          <p>Embed music or a video here.</p>
+      </div>
+  </div>
+
+<script>
+  function openApplication(appId) {
+      document.querySelectorAll('.window').forEach(win => win.classList.add('hidden'));
+      document.getElementById(appId).classList.remove('hidden');
+  }
+
+  function closeApplication(appId) {
+      document.getElementById(appId).classList.add('hidden');
+  }
+</script>
+</body>
+</html>
